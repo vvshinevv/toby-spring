@@ -6,6 +6,7 @@ import org.junit.platform.launcher.core.LauncherFactory;
 import org.junit.platform.launcher.listeners.SummaryGeneratingListener;
 import org.junit.platform.launcher.listeners.TestExecutionSummary;
 
+import java.io.PrintWriter;
 import java.util.Objects;
 
 import static org.junit.platform.engine.discovery.DiscoverySelectors.selectClass;
@@ -29,6 +30,8 @@ public class UserDaoMainTest {
         System.out.println("# of containers skipped: " + summary.getContainersSkippedCount());
         System.out.println("# of tests found: " + summary.getTestsFoundCount());
         System.out.println("# of tests skipped: " + summary.getTestsSkippedCount());
+
+        summary.printTo(new PrintWriter(System.out));
 
         if (summary.getFailures().size() > 0) {
             for (TestExecutionSummary.Failure failure : summary.getFailures()) {
