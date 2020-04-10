@@ -49,9 +49,6 @@ public class UserServiceTest {
     @Autowired
     private UserDao userDao;
 
-    @Autowired
-    private PlatformTransactionManager transactionManager;
-
     private List<User> userList;
 
     @BeforeEach
