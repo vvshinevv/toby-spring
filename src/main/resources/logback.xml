@@ -20,6 +20,6 @@
         <appender-ref ref="fileAppender"/>
     </appender>
     <root level="DEBUG">
-        <appender-ref ref="asyncAppender"/>
+        <appender-ref ref="consoleAppender"/>
     </root>
 </configuration>
