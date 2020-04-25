@@ -31,9 +31,10 @@
     </bean>
     <bean id="sqlService" class="com.study.spring.user.sqlservice.OxmSqlService">
         <property name="unmarshaller" ref="unmarshaller"/>
-        <property name="sqlMap" value="classpath:sqlmap/sqlmap.xml"/>
+        <property name="sqlRegistry" ref="sqlRegistry"/>
     </bean>
     <bean id="unmarshaller" class="org.springframework.oxm.jaxb.Jaxb2Marshaller">
         <property name="contextPath" value="com.study.spring.user.sqlservice.jaxb"/>
     </bean>
+    <bean id="sqlRegistry" class="com.study.spring.user.sqlservice.ConcurrentHashMapSqlRegistry"/>
 </beans>
